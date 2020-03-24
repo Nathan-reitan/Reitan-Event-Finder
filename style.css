@@ -1,4 +1,12 @@
-#map{
-  height: 400px;
+.container{
+  height: 100%;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#map{
+  height: 800px;
+  width: 80%;
 }
