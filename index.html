@@ -5,15 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Reitan Event Finder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Your Current Location(Starting location is Timbuktu LMAO)</h1>
+    <h1>Event Locations</h1>
     <div id="map"></div>
+    <div id="events">
+      <table class="table table-dark">
+        <thead>
+          <th scope="col">Event</th>
+          <th scope="col">Venue</th>
+          <th scope="col">City</th>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+      </table>
+    </div>
 
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <script src="components/navigator.js"></script>
   <script src="components/googleMaps.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0epOxsv3I7QHLEXWsCSGtFII6FoAHzgE&callback=initMap">
