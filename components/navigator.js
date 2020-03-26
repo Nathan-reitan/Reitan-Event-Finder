@@ -7,8 +7,6 @@ function successHandler(position){
   lat = crd.latitude;
   long = crd.longitude;
   latlong = lat + "," + long;
-  initMap();
-  console.log(latlong);
   instantiateTicket(latlong);
 }
 
