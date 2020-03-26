@@ -1,9 +1,18 @@
+.background{
+  background-color: black;
+    background-image: url(assets/Corona-concert.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
 .container{
   height: 100%;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 #map{
