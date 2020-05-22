@@ -19,4 +19,6 @@ See the live site here - [Reitan-Event-Finder](https://reitan-event-finder.natha
 ## Getting Started
 1. Clone the repository and navigate to the directory
 ```shell
-git clone 
+git clone https://github.com/Nathan-reitan/Reitan-Event-Finder.git
+cd reitan-event-finder
+```
