@@ -10,7 +10,7 @@ function initMap(latlong, json){
       center: yourLocation,
     });
   for (var i = 0; i<20; i++) {
-    infoWindow = new google.maps.InfoWindow();
+    var infoWindow = new google.maps.InfoWindow();
     infoWindowArr.push(infoWindow);
     var contentString = {
                     location: json._embedded.events[i]._embedded.venues[0].name,
