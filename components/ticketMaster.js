@@ -11,6 +11,20 @@ class Ticketmaster{
       url: "https://app.ticketmaster.com/discovery/v2/events.json?size=20&apikey=uPhG93gkA9zk83eAg0Q2AvsIbEOSrASU&radius=30&latlong="+this.latlong,
     dataType: "json",
     success: function (json) {
+      if (!json._embedded){
+        var blankRow = document.createElement("tr");
+        var eventNameNa = document.createElement("td");
+        eventNameNa.textContent = 'No Events in your area';
+        var eventVenueNa = document.createElement("td");
+        eventVenueNa.textContent = 'N/A';
+        var eventCityNa = document.createElement("td");
+        eventCityNa.textContent = 'N/A'
+        blankRow.appendChild(eventNameNa);
+        blankRow.appendChild(eventVenueNa);
+        blankRow.appendChild(eventCityNa);
+        tbody.appendChild(blankRow);
+        return;
+      }
       for (var i = 0; i < json._embedded.events.length; i++){
         var row = document.createElement("tr");
         var eventName = document.createElement("td");
@@ -24,7 +38,7 @@ class Ticketmaster{
         row.appendChild(eventCity);
         tbody.appendChild(row);
       }
-      initMap(latlong, json);
+      initMap(this.latlong, json);
     },
       error: function (xhr, status, err) {
       }
