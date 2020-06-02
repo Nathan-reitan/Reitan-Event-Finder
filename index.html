@@ -16,7 +16,14 @@
         <h1>Reitan Event Finder</h1>
       </div>
       <div>
-        <h2>Event Locations in your area</h2>
+        <h2>Event locations in your area</h2>
+      </div>
+      <div class="my-2">
+      <form action="submit">
+        <label for="zip">Search by city/address:</label>
+        <input type="text" name="address" id="address" placeholder="Enter address here">
+        <button type="button" value="Encode" onclick="codeAddress(), clearData()" class="btn btn-secondary">Search</button>
+      </form>
       </div>
       <div id="map"></div>
       <div id="events" class="my-2">

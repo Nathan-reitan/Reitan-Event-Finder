@@ -1,15 +1,21 @@
 var yourLocation;
 var contentStringArr=[];
 var infoWindowArr=[];
+var geocoder;
+var map;
 
 function initMap(latlong, json){
+  geocoder = new google.maps.Geocoder();
   yourLocation = {lat: lat, lng: long,};
-  var map = new google.maps.Map(
+  map = new google.maps.Map(
     document.getElementById("map"),{
       zoom: 10,
       center: yourLocation,
     });
   for (var i = 0; i<20; i++) {
+    if (!json) {
+      return;
+    }
     var infoWindow = new google.maps.InfoWindow();
     infoWindowArr.push(infoWindow);
     var contentString = {
@@ -21,6 +27,32 @@ function initMap(latlong, json){
     addMarker(map, json._embedded.events[i]);
   }
   var yourMarker = new google.maps.Marker({position: yourLocation, map: map});
+}
+
+function codeAddress(){
+  var address = document.getElementById('address').value;
+  geocoder.geocode({ 'address': address }, function (results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+      lat = results[0].geometry.location.lat();
+      long = results[0].geometry.location.lng()
+      latlong = lat + "," + long;
+      instantiateTicket(latlong);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+function clearData(){
+  var table = document.getElementById('table')
+  while(table.hasChildNodes()){
+    table.removeChild(table.childNodes[0]);
+  }
 }
 
 function addMarker(map, event){
