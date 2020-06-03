@@ -49,9 +49,9 @@ function codeAddress(){
 }
 
 function clearData(){
-  var table = document.getElementById('table')
-  while(table.hasChildNodes()){
-    table.removeChild(table.childNodes[0]);
+  var events = document.getElementById('events')
+  while(events.hasChildNodes()){
+    events.removeChild(events.childNodes[0]);
   }
 }
 
