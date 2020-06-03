@@ -33,6 +33,12 @@ function initMap(latlong, json){
 
 function handleSubmit(event){
   event.preventDefault();
+  address = document.getElementById('address').value
+  codeAddress();
+  if (address){
+    clearData();
+    return
+  }
 }
 
 function codeAddress(){
