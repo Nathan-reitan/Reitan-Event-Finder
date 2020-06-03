@@ -3,6 +3,7 @@ var contentStringArr=[];
 var infoWindowArr=[];
 var geocoder;
 var map;
+var address;
 
 function initMap(latlong, json){
   geocoder = new google.maps.Geocoder();
@@ -30,7 +31,7 @@ function initMap(latlong, json){
 }
 
 function codeAddress(){
-  var address = document.getElementById('address').value;
+  address = document.getElementById('address').value
   geocoder.geocode({ 'address': address }, function (results, status) {
     if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
@@ -49,6 +50,10 @@ function codeAddress(){
 }
 
 function clearData(){
+  address = document.getElementById('address').value
+  if(!address){
+    return alert('You must enter a valid city or Address.')
+  }
   var events = document.getElementById('events')
   while(events.hasChildNodes()){
     events.removeChild(events.childNodes[0]);
