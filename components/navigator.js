@@ -1,5 +1,5 @@
-var lat = 16.766588;
-var long = -3.002562;
+var lat = 33.426971;
+var long = -117.611992;
 var latlong;
 
 function successHandler(position){
