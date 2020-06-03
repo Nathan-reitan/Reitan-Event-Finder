@@ -33,6 +33,9 @@ function initMap(latlong, json){
 
 function codeAddress(){
   address = document.getElementById('address').value
+  if (!address){
+    return
+  }
   geocoder.geocode({ 'address': address }, function (results, status) {
     if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
@@ -51,10 +54,6 @@ function codeAddress(){
 }
 
 function clearData(){
-  address = document.getElementById('address').value
-  if(!address){
-    return
-  }
   var events = document.getElementById('events')
   while(events.hasChildNodes()){
     events.removeChild(events.childNodes[0]);
