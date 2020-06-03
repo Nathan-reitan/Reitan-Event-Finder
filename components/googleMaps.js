@@ -31,8 +31,14 @@ function initMap(latlong, json){
   var yourMarker = new google.maps.Marker({position: yourLocation, map: map});
 }
 
+function handleSubmit(event){
+  event.preventDefault();
+}
+
 function codeAddress(){
+  console.log(event)
   address = document.getElementById('address').value
+  console.log(address)
   if (!address){
     return
   }

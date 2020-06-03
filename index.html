@@ -22,7 +22,7 @@
       <form>
         <label for="zip">Search by city/address:</label>
         <input type="text" name="address" id="address" placeholder="Enter address here" required>
-        <button type="submit" value="Encode" id="button" onclick="codeAddress(), clearData()" class="btn btn-secondary">Search</button>
+        <button type="submit" value="Encode" id="button" onclick="handleSubmit(event), codeAddress(), clearData()" class="btn btn-secondary">Search</button>
       </form>
       </div>
       <div id="map"></div>
