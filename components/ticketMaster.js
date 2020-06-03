@@ -1,4 +1,4 @@
-var tbody = document.getElementById("table");
+var events = document.getElementById('events')
 
 class Ticketmaster{
   constructor(latlong){
@@ -11,6 +11,26 @@ class Ticketmaster{
       url: "https://app.ticketmaster.com/discovery/v2/events.json?size=20&apikey=uPhG93gkA9zk83eAg0Q2AvsIbEOSrASU&radius=30&latlong="+this.latlong,
     dataType: "json",
     success: function (json) {
+      var table = document.createElement('table');
+      table.setAttribute('class','table table-dark');
+      var thead = document.createElement('thead');
+      var eventH = document.createElement('th')
+      eventH.textContent = 'Event';
+      eventH.setAttribute('scope', 'col')
+      var venueH = document.createElement('th');
+      venueH.textContent = 'Venue';
+      venueH.setAttribute('scope', 'col')
+      var cityH = document.createElement('th');
+      cityH.textContent = 'City';
+      cityH.setAttribute('scope', 'col')
+      var tbody = document.createElement('tbody')
+      tbody.setAttribute('id', 'table');
+      thead.appendChild(eventH);
+      thead.appendChild(venueH);
+      thead.appendChild(cityH);
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      events.appendChild(table);
       if (!json._embedded){
         var blankRow = document.createElement("tr");
         var eventNameNa = document.createElement("td");
