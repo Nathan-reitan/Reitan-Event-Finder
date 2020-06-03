@@ -50,18 +50,6 @@ function codeAddress(){
   });
 }
 
-function disableButton(){
-  console.log('change')
-  address = document.getElementById('address').value
-  var button = document.getElementById('button');
-  if (!address){
-    return button.setAttribute('disabled', true)
-  }
-  if (address){
-    return button.removeAttribute('disabled')
-  }
-}
-
 function clearData(){
   address = document.getElementById('address').value
   if(!address){
