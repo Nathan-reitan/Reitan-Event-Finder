@@ -3,12 +3,13 @@ An event-finder app utilizing Google-Maps and TicketMaster APIs to populate a ma
 ## Live Site
 See the live site here - [Reitan-Event-Finder](https://reitan-event-finder.nathanreitan.com/)
 ## Technologies
+* JavaScript
+* OOP
+* jQuery | Ajax
 * HTML5 
 * CSS3
 * Bootstrap
-* JavaScript
-* OOP
-* jQuery
+* Restful APIs
 * AWS EC2
 ## Feature List
 1. User can see current location on map
