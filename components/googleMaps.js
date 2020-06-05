@@ -4,7 +4,6 @@ var infoWindowArr=[];
 var geocoder;
 var map;
 var address;
-var input = document.getElementById('address')
 
 function initMap(latlong, json){
   geocoder = new google.maps.Geocoder();
@@ -31,10 +30,19 @@ function initMap(latlong, json){
   var yourMarker = new google.maps.Marker({position: yourLocation, map: map});
 }
 
+function loadingScreen(){
+  var modal = document.getElementById("loading");
+    modal.classList.remove('hidden');
+    setTimeout(function(){
+      modal.classList.add('hidden')
+    }, 2000);
+}
+
 function handleSubmit(event){
   event.preventDefault();
   address = document.getElementById('address').value
   codeAddress();
+  loadingScreen();
   if (address){
     clearData();
     return
@@ -42,9 +50,7 @@ function handleSubmit(event){
 }
 
 function codeAddress(){
-  console.log(event)
   address = document.getElementById('address').value
-  console.log(address)
   if (!address){
     return
   }
