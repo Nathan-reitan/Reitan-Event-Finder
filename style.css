@@ -1,8 +1,13 @@
+body{
+  background-color: black;
+}
+
 .background{
   background-color: black;
     background-image: url(assets/Corona-concert.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
+    background-size: cover;
 }
 
 .container{
@@ -37,7 +42,15 @@ form{
 
 .loadingCard{
   background-color: rgba(223, 165, 66, .5);
-  width: 50%;
+  width: 35%;
+}
+
+.loadingCard>img{
+  max-height: 200px;
+}
+
+.invisible{
+  visibility: hidden;
 }
 
 .hidden{
