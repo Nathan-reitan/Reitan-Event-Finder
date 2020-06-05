@@ -8,6 +8,7 @@ function successHandler(position){
   long = crd.longitude;
   latlong = lat + "," + long;
   instantiateTicket(latlong);
+  loadingScreen();
 }
 
 
