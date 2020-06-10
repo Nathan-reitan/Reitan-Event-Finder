@@ -32,13 +32,10 @@ function initMap(latlong, json){
 
 function loadingScreen(){
   var modal = document.getElementById("loading");
-  var mapDiv = document.getElementById("map");
     modal.classList.remove('hidden');
-    mapDiv.classList.add('invisible')
     setTimeout(function(){
       modal.classList.add('hidden')
-      mapDiv.classList.remove('invisible')
-    }, 2000);
+    }, 2500);
 }
 
 function handleSubmit(event){
