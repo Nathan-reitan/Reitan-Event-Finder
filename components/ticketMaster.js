@@ -23,11 +23,15 @@ class Ticketmaster{
       var cityH = document.createElement('th');
       cityH.textContent = 'City';
       cityH.setAttribute('scope', 'col')
+      var linkH = document.createElement('th');
+      linkH.textContent = "Ticketmaster Link";
+      linkH.setAttribute('scope', 'col')
       var tbody = document.createElement('tbody')
       tbody.setAttribute('id', 'table');
       thead.appendChild(eventH);
       thead.appendChild(venueH);
       thead.appendChild(cityH);
+      thead.appendChild(linkH);
       table.appendChild(thead);
       table.appendChild(tbody);
       events.appendChild(table);
@@ -39,6 +43,8 @@ class Ticketmaster{
         eventVenueNa.textContent = 'N/A';
         var eventCityNa = document.createElement("td");
         eventCityNa.textContent = 'N/A'
+        var eventLinkNa = document.createElement('td');
+        eventLinkNa.textContent = 'N/A'
         blankRow.appendChild(eventNameNa);
         blankRow.appendChild(eventVenueNa);
         blankRow.appendChild(eventCityNa);
@@ -53,9 +59,15 @@ class Ticketmaster{
         eventVenue.textContent = json._embedded.events[i]._embedded.venues[0].name;
         var eventCity = document.createElement("td");
         eventCity.textContent = json._embedded.events[i]._embedded.venues[0].city.name
+        var eventLinkTd = document.createElement('td');
+        var eventLink = document.createElement('a');
+        eventLink.setAttribute('href', json._embedded.events[i].url)
+        eventLink.textContent = "Event Info"
+        eventLinkTd.appendChild(eventLink);
         row.appendChild(eventName);
         row.appendChild(eventVenue);
         row.appendChild(eventCity);
+        row.appendChild(eventLinkTd);
         tbody.appendChild(row);
       }
       initMap(this.latlong, json);
