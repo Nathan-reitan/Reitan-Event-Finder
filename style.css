@@ -3,14 +3,14 @@ body{
 }
 
 .landing{
-  color: blueviolet;
+  color: rgb(161, 30, 30);
   z-index: 3;
   position: fixed;
   background-color: black;
 }
 
 .enterButton{
-  background-color: blueviolet;
+  background-color: rgb(161, 30, 30);
   color: black;
   font-family: 'Permanent Marker', cursive;
 }
