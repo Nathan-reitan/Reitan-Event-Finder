@@ -12,8 +12,11 @@ body{
 .enterButton{
   background-color: rgb(161, 30, 30);
   color: black;
-  font-family: 'Permanent Marker', cursive;
   font-size: 3.0em;
+}
+
+.perm{
+  font-family: 'Permanent Marker', cursive;
 }
 
 .container{
