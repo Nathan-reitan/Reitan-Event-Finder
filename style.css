@@ -2,6 +2,19 @@ body{
   background: url(assets/concert.jpg) no-repeat center center fixed;
 }
 
+.landing{
+  color: blueviolet;
+  z-index: 3;
+  position: fixed;
+  background-color: black;
+}
+
+.enterButton{
+  background-color: blueviolet;
+  color: black;
+  font-family: 'Secular One', sans-serif;
+}
+
 .container{
   height: 100%;
   width: 100%;

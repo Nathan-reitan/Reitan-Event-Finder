@@ -11,10 +11,22 @@
   <title>Reitan Event Finder</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background">
+  <div class="w-100 h-100 d-flex justify-content-center flex-wrap landing p-3">
+      <h1>Welcome to Reitan Event Finder</h1>
+      <h3>This is a demonstrative site developed by Nathan Reitan that will utilize ajax calls to instantiate a map using the Google-Maps API and populate it with events pulled from the Tickemaster API.</h3>
+      <div class="w-25 h-25">
+        <button id="enter" class="enterButton w-100 h-25">
+         <h1>
+          Enter
+          </h1>
+        </button>
+      </div>
+  </div>
+  <div>
     <div class="loading hidden" id="loading">
       <div class="loadingCard">
         <div class="w-100 text-center">
@@ -40,9 +52,7 @@
       </form>
       </div>
       <div id="map"></div>
-      <div id="events" class="my-2">
-
-      </div>
+      <div id="events" class="my-2"></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
