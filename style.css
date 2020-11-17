@@ -12,8 +12,10 @@ body{
 .enterButton{
   background-color: rgb(161, 30, 30);
   color: black;
-  font-size: 2.5em;
-  height: 25%;
+  font-size: 2.25em;
+  height: 30%;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .perm{
